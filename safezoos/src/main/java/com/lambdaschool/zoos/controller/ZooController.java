@@ -30,4 +30,11 @@ public class ZooController
     {
         return new ResponseEntity<>(zooService.findZooById(zooid), HttpStatus.OK);
     }
+
+    // GET localhost:2019/zoos/{name}
+    @GetMapping(value = "/{zooname}", produces = {"application/json"})
+    public ResponseEntity<?> getZooByName(@PathVariable String zooname)
+    {
+        return new ResponseEntity<>(zooService.findZooByName(zooname), HttpStatus.OK);
+    }
 }
