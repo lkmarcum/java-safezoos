@@ -2,6 +2,7 @@ package com.lambdaschool.zoos.service;
 
 import com.lambdaschool.zoos.model.Animal;
 import com.lambdaschool.zoos.repository.AnimalRepository;
+import com.lambdaschool.zoos.view.CountAnimals;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,5 +33,11 @@ public class AnimalServiceImpl implements AnimalService
             throw new EntityNotFoundException("Animal " + type + " not found!");
         }
         return animal;
+    }
+
+    @Override
+    public ArrayList<CountAnimals> getCountAnimals()
+    {
+        return animalrepos.getCountAnimals();
     }
 }
